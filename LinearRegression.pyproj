@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>aa4f74e5-4c0d-4a64-b2ae-248a4925ab9a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>LinearRegression.py</StartupFile>
+    <StartupFile>Process_GNSS_rawdata.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="LinearRegression.py" />
+    <Compile Include="Process_GNSS_rawdata.py" />
     <Compile Include="transformation.py" />
   </ItemGroup>
   <ItemGroup>
