@@ -23,6 +23,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="LinearRegression.py" />
+    <Compile Include="transformation.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Scripts" />

@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 
 # origin: https://blog.csdn.net/arli_xu/article/details/100145495
@@ -37,18 +38,18 @@ def fit(points):
         sum_yx += y*(x-x_bar)
         sum_x2 += x**2
     
-    w = sum_yx/(sum_x2-M*(x_bar**2))
+    a = sum_yx/(sum_x2-M*(x_bar**2))
     
     for i in range(M):
         x=points[i,0]
         y=points[i,1] 
-        sum_delta += (y-w*x)
+        sum_delta += (y-a*x)
     b = sum_delta / M
-    return w,b
+    return a,b
 
 
 def main():
-    points = np.genfromtxt("data.csv",delimiter=",")
+    points = np.genfromtxt("outputSmartPhone_filtered.csv",delimiter=",")
     x=points[:,0]
     y=points[:,1]
 
@@ -58,8 +59,10 @@ def main():
     cost = compute_cost(a,b,points)
     print("cost is :" ,cost)
     pred_y= a*x+b
+    #ref_y = 0*x + 446645.1966
 
     plt.scatter(x,y,marker='.')
+    #plt.plot(x,ref_y,c='b')
     plt.plot(x,pred_y,c='r')
     plt.xlabel('x')
     plt.ylabel('y')
